@@ -7,7 +7,7 @@ import { generateStaticIP } from "../lib/generate_ip.js";
 const execAsync = util.promisify(exec)
 const PMX_NODE = process.env.PMX_NODE;
 // --- CORE: Create LXC Container ---
-async function createLXCContainer(vmData, targetVmid) {
+export async function createLXCContainer(vmData, targetVmid) {
   console.log(`\n [Proxmox API] Creating LXC ${targetVmid}...`);
 
   const cleanHostname = sanitizeHostname(vmData.name);
