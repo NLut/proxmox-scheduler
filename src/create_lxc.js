@@ -8,13 +8,13 @@ const execAsync = util.promisify(exec)
 const PMX_NODE = process.env.PMX_NODE;
 // --- CORE: Create LXC Container ---
 async function createLXCContainer(vmData, targetVmid) {
-  console.log(`\n🔌 [Proxmox API] Creating LXC ${targetVmid}...`);
+  console.log(`\n [Proxmox API] Creating LXC ${targetVmid}...`);
 
   const cleanHostname = sanitizeHostname(vmData.name);
   const templatePath = vmData.imageLocation; 
   
   if (!templatePath) {
-    console.error("   ❌ Error: No image location provided.");
+    console.error(" Error: No image location provided.");
     return { success: false };
   }
 
